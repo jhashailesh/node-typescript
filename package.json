@@ -1,0 +1,27 @@
+{
+  "name": "node-typescript",
+  "version": "1.0.0",
+  "description": "This app is just to show case better use of structure and features",
+  "main": "server.js\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D.dist/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jhashailesh3108:premeena1@github.com/jhashailesh3108/node-typescript.git"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "mongoose",
+    "express",
+    "redis",
+    "graphql"
+  ],
+  "author": "Shailesh kumar Jha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhashailesh3108/node-typescript/issues"
+  },
+  "homepage": "https://github.com/jhashailesh3108/node-typescript#readme"
+}
