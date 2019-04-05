@@ -2,9 +2,11 @@
   "name": "node-typescript",
   "version": "1.0.0",
   "description": "This app is just to show case better use of structure and features",
-  "main": "server.js\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D.dist/server.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon -x ts-node src/server.ts",
+    "compile": "tsc-watch --onSuccess \"node ./dist/server.js\"",
+    "startPM2": "pm2 start pm2.yaml"
   },
   "repository": {
     "type": "git",
