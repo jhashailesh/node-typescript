@@ -32,4 +32,5 @@ export const applyRoutes = (routes: IRoute[], router: Router) => {
     const { method, path, handler } = route;
     (router as any)[method](path, handler);
   }
+  return router;
 };
