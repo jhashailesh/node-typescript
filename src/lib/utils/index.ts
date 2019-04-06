@@ -20,14 +20,14 @@ type Handler = (
   next: NextFunction
 ) => Promise<void> | void;
 
-interface Route {
+interface IRoute {
   path: string;
   method: string;
   handler: Handler | Handler[];
 }
 
 // loading all routes and initialize to use them. 
-export const applyRoutes = (routes: Route[], router: Router) => {
+export const applyRoutes = (routes: IRoute[], router: Router) => {
   for (const route of routes) {
     const { method, path, handler } = route;
     (router as any)[method](path, handler);

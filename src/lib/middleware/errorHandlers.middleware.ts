@@ -9,13 +9,13 @@ const handle404Error = (router: Router) => {
 
 const handleClientError = (router: Router) => {
   router.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-    ErrorHandler.clientError(err, res, next);
+    ErrorHandler.clientError(err, req, res, next);
   });
 };
 
 const handleServerError = (router: Router) => {
   router.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-    ErrorHandler.serverError(err, res, next);
+    ErrorHandler.serverError(err, req, res, next);
   });
 };
 
