@@ -1,3 +1,3 @@
-import { handleBodyRequestParsing } from "./common.middleware";
+import { handleBodyRequestParsing, allowCors, reqConsoleLogger,handleCompression, requestLimiter } from "./common.middleware";
 
-export default [handleBodyRequestParsing];
+export default [handleBodyRequestParsing, allowCors, reqConsoleLogger, handleCompression, requestLimiter];

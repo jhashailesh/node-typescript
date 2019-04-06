@@ -5,7 +5,7 @@ export default [ {
   method: "get",
   handler: async (req: Request, res: Response, next: NextFunction) => {
     try {
-      res.status(200).json({message: "You are on version 2 Api"});
+      res.status(200).json({message: "You are on version 2 Api  123"});
     } catch (e) {
       // send error with next function.
       next(e)
