@@ -1,17 +1,18 @@
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
+import { HTTP401Error } from "../../lib/utils/httpErrors";
 
 export default [
   {
     path: "/",
     method: "get",
-    handler: async (req: Request, res: Response) => {
+    handler: async (req: Request, res: Response, next: NextFunction) => {
       try {
         const param: number = req.query.numb;
         console.log(param);
-        res.send(param);
+        throw new HTTP401Error("You are not authorized user");
       } catch (e) {
-        res.send("error message");
-        // We don't have any error handlers for that we will use to handle our error.
+        // send error with next function.
+        next(e)
       }
     }
   }

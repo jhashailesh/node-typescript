@@ -12,6 +12,8 @@ export const applyMiddleware = (
   }
 };
 
+/* Handles all type of api requests. */
+
 type Handler = (
   req: Request,
   res: Response,
@@ -24,6 +26,7 @@ interface Route {
   handler: Handler | Handler[];
 }
 
+// loading all routes and initialize to use them. 
 export const applyRoutes = (routes: Route[], router: Router) => {
   for (const route of routes) {
     const { method, path, handler } = route;

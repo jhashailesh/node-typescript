@@ -4,6 +4,7 @@ import express from "express";
 import { applyMiddleware, applyRoutes } from "./lib/utils";
 import middleware from "./lib/middleware";
 import routes from "./routes";
+import errorHandlersMiddleware from "./lib/middleware/errorHandlers.middleware";
 
 /* Error Handlers */
 // These error handlers will caught any unhandled exceptions or rejections
@@ -24,6 +25,7 @@ const app: express.Application = express();
 // Initialize middleware
 applyMiddleware(middleware, app);
 applyRoutes(routes, app);
+applyMiddleware(errorHandlersMiddleware, app);
 
 
 // Exporting app
