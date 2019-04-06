@@ -5,6 +5,7 @@ import { applyMiddleware, applyRoutes} from "./lib/utils";
 import middleware from "./lib/middleware";
 import {v1, v2} from "./routes";
 import errorHandlersMiddleware from "./lib/middleware/errorHandlers.middleware";
+import dbConnection from "./lib/helpers/dbConnection";
 
 /* Error Handlers */
 // These error handlers will caught any unhandled exceptions or rejections
@@ -24,6 +25,9 @@ const app: express.Application = express();
 
 // Initialize middleware
 applyMiddleware(middleware, app);
+
+// open  mongoose connection
+dbConnection.mongoConnection();
 
 /*---------------------------------------
 | API VERSIONS CONFIGURATION [START]
