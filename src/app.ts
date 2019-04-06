@@ -1,6 +1,8 @@
 import express from "express";
 
-
+/* Custom imports */
+import { applyMiddleware } from "./lib/utils";
+import middleware from "./lib/middleware";
 
 /* Error Handlers */
 // These error handlers will caught any unhandled exceptions or rejections
@@ -17,6 +19,9 @@ process.on("unhandledRejection", e => {
 
 // Initialize express app
 const app: express.Application = express();
+
+// Initialize middleware
+applyMiddleware(middleware, app);
 
 
 // Exporting app

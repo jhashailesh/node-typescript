@@ -3,6 +3,13 @@ This is node app (handles Rest APIs) with express, mongoose it's built on top of
 
 # Start Server
 
+**In development phase**
+> npm install
+
+**In production phase**
+>npm install --production
+---
+
 **1.** This will run with ts-node and start server, It will run node.js code without compiling typescript file into javascript. *Downside is that it is not able to run on server with pm2 at the time I am writing it* So for production it's better to go with compiled version.  
 >npm run start
 
