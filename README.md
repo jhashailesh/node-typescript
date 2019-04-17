@@ -41,4 +41,4 @@ The following structure I have followed in this project.
     - For handling experess middlewares and server. This is main and origin of this whole work.
 - **Types**
   - It allows user to add custom types to particular available package in typescript
-- Othe **configs**
+- **Other configs**
