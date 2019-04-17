@@ -25,12 +25,14 @@ This is node app (handles Rest APIs) with express, mongoose it's built on top of
 
 The following structure I have followed in this project.
 
-![image](https://drive.google.com/uc?export=view&id=19J3in1YuxeGpPQ86fh9Y-T6NPAzxGnQu)
+![structure](https://drive.google.com/uc?export=view&id=19J3in1YuxeGpPQ86fh9Y-T6NPAzxGnQu)
 
 - **src**
   - All building block will come inside this folder
   - **Components**
     - components can have a particular module functionalities. *say here I am using a user module. I kept all it's router, controller, model, schemas and etc. means everything related to user component, components/user/--functions-- .*
+    - 
+    - ![structure](https://drive.google.com/uc?export=view&id=1Z_8qLDBcNeGQbCkRH-gmeyrQZwuPQNZ_)
   - **Config**
     - all configuration will come here
   - **lib**
