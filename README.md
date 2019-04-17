@@ -23,3 +23,22 @@ This is node app (handles Rest APIs) with express, mongoose it's built on top of
 
 # Structure
 
+The following structure I have followed in this project.
+
+![image](https://drive.google.com/uc?export=view&id=19J3in1YuxeGpPQ86fh9Y-T6NPAzxGnQu)
+
+- **src**
+  - All building block will come inside this folder
+  - **Components**
+    - components can have a particular module functionalities. *say here I am using a user module. I kept all it's router, controller, model, schemas and etc. means everything related to user component, components/user/--functions-- .*
+  - **Config**
+    - all configuration will come here
+  - **lib**
+    - all middleware, helper, utilities, third party services will come inside
+  - **Routes**
+    - It handles all routing and api versioning can also be done
+  - **app.ts and server.ts**
+    - For handling experess middlewares and server. This is main and origin of this whole work.
+- **Types**
+  - It allows user to add custom types to particular available package in typescript
+- Othe **configs**
