@@ -12,7 +12,7 @@ class UserController {
         req.boo = "dasdasd";
         responseHandler.
         reqRes(req, res).
-        onCreate(msg.CREATED, await userModel.fetchAll(), msg.CREATED_DEC).
+        onFetch(msg.FETCH_ALL, await userModel.fetchAll(), msg.CREATED_DEC).
         send();
 
       } catch (e) {

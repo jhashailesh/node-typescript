@@ -5,6 +5,7 @@ export default [
   {
     path: "/",
     method: "get",
+    escapeAuth:true,
     handler: [userController.fetchAll]
   },
   {
