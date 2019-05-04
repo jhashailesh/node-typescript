@@ -8,7 +8,8 @@ import errorHandlersMiddleware from "./lib/middleware/errorHandlers.middleware";
 import dbConnection from "./lib/helpers/dbConnection";
 
 /* Importing defaults */
-import "./lib/services/cache";
+// import "./lib/services/cache"; 
+// Uncomment this when you are ready to use cache.
 
 
 /* Error Handlers */

@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { createClient } from 'redis';
+
 // import  { promisify } from 'util';
 
 import { ICacheOptions } from "../utils/commonInterface";
@@ -56,8 +57,6 @@ const getHashValue = (hashKey: string, key: string): Promise<string> => {
     })
   });
 }
-
-
 
 export const clearHash = (hashKey:string)=>{
   client.del(JSON.stringify(hashKey));
