@@ -7,6 +7,10 @@ import {v1, v2} from "./routes";
 import errorHandlersMiddleware from "./lib/middleware/errorHandlers.middleware";
 import dbConnection from "./lib/helpers/dbConnection";
 
+/* Importing defaults */
+import "./lib/services/cache";
+
+
 /* Error Handlers */
 // These error handlers will caught any unhandled exceptions or rejections
 // and do not stop the process with zero. 

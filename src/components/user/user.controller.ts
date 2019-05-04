@@ -9,7 +9,6 @@ class UserController {
     public fetchAll = async (req: Request, res: Response, next: NextFunction) => {
       try {
 
-        req.boo = "dasdasd";
         responseHandler.
         reqRes(req, res).
         onFetch(msg.FETCH_ALL, await userModel.fetchAll(), msg.CREATED_DEC).
@@ -20,7 +19,6 @@ class UserController {
         next(e)
       }
     }
-
     /**
      * createUser
      */

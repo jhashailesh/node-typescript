@@ -3,7 +3,7 @@ import { User, IUserModel } from "./user.schema";
 export class UserModel {
 
   async fetchAll() {
-    return User.find({}, 'name email age');
+    return User.find({}).select({name:1}).cache();
   }
 
   async fetch(id: string) {
@@ -13,7 +13,6 @@ export class UserModel {
   async add(body: IUserModel) {
     const q: IUserModel = new User(body);
     return q.addNewUser();
-
   }
 
   async update(id: string, body: IUserModel) {
@@ -25,6 +24,5 @@ export class UserModel {
     return q.remove();
   }
 }
-
 
 export default new UserModel;

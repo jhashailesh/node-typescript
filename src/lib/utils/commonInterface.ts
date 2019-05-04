@@ -6,3 +6,8 @@ export interface  IErrorResponse {
   description?: string,
   payload?: any
 }
+
+
+export interface ICacheOptions{
+  key?: any
+}
