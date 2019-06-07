@@ -32,12 +32,18 @@ export interface IRoute {
 // loading all routes and initialize to use them. 
 export const applyRoutes = (routes: IRoute[], router: Router) => {
   for (const route of routes) {
-    const { method, path, escapeAuth, handler} = route;
-
+    const { method, path, escapeAuth} = route;
+    let handler = route.handler;
+    
+    if(!Array.isArray(handler)){
+      handler = [handler];
+    }
+   
     if(!escapeAuth){
-      Authorization(route, router);
+      (router as any)[method](path, [Authorization, ...handler]);
     }
     (router as any)[method](path, handler);
+    
   }
   return router;
 };

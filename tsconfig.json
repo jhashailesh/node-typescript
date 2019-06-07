@@ -19,6 +19,7 @@
       // "noUnusedParameters": true,
       "noImplicitReturns": true,
       "noFallthroughCasesInSwitch": true,
+      "types": ["reflect-metadata"],
       // "allowSyntheticDefaultImports": false,
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,

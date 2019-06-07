@@ -11,6 +11,7 @@ export default [
   {
     path: "/",
     method: "post",
+    escapeAuth: true,
     handler: [userController.create]
   },
   {

@@ -33,7 +33,9 @@
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "express-rate-limit": "^3.4.0",
-    "mongoose": "^5.4.22"
+    "inversify": "^5.0.1",
+    "mongoose": "^5.4.22",
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",

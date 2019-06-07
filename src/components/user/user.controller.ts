@@ -1,18 +1,24 @@
 import { Request, Response, NextFunction } from "express";
 import { user as msg } from "../../lib/helpers/customMessage";
 import responseHandler from "../../lib/helpers/responseHandler";
-import userModel from "./user.model";
+import { DIUserModel } from "./user.service";
+import { UserModel } from "./user.model";
 
+const userModel:any = {}
 
-class UserController {
+export class UserController {
+
+  protected model: UserModel;
+
+  constructor(model: UserModel){
+    this.model = model;
+  }
 
     public fetchAll = async (req: Request, res: Response, next: NextFunction) => {
       try {
-
-        req.boo = "dasdasd";
         responseHandler.
         reqRes(req, res).
-        onFetch(msg.FETCH_ALL, await userModel.fetchAll(), msg.CREATED_DEC).
+        onFetch(msg.FETCH_ALL, await this.model.fetchAll(), msg.CREATED_DEC).
         send();
 
       } catch (e) {
@@ -28,7 +34,7 @@ class UserController {
       try {
         responseHandler.
         reqRes(req, res).
-        onCreate(msg.CREATED, await userModel.add(req.body), msg.CREATED_DEC).
+        onCreate(msg.CREATED, await this.model.add(req.body), msg.CREATED_DEC).
         send();
       } catch (e) {
         next(e);
@@ -57,4 +63,4 @@ class UserController {
     }
 }
 
-export default new UserController;
+export default new UserController(DIUserModel);
