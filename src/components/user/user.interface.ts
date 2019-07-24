@@ -18,6 +18,7 @@ export interface IUserModel extends IUser, Document {
 export interface IUserCustomModel {
   fetchAll():Promise<IUserModel[]>;
   fetch(id:string):Promise<IUserModel | null>;
+  add(data: IUserModel):Promise<IUserModel | null>;
   update(id: string, body: IUserModel):Promise<IUserModel | null>;
   remove(id: string):Promise<IUserModel | null>;
 }

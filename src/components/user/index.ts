@@ -1,5 +1,4 @@
-import userController from "./user.controller";
-
+import { userController } from "./user.service";
 
 export default [
   {

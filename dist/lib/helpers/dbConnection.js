@@ -10,10 +10,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
 const chalk = __importStar(require("chalk"));
 const config_1 = require("../../config");
-var connected = chalk.default.bold.cyan;
-var error = chalk.default.bold.yellow;
-var disconnected = chalk.default.bold.red;
-var termination = chalk.default.bold.magenta;
+const connected = chalk.default.bold.cyan;
+const error = chalk.default.bold.yellow;
+const disconnected = chalk.default.bold.red;
+const termination = chalk.default.bold.magenta;
 class Connection {
     constructor(uri) {
         this.mongoUrl = uri;

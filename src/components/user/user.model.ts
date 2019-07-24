@@ -1,11 +1,14 @@
 import { User} from "./user.schema";
 import { injectable } from "inversify";
 import { IUserCustomModel, IUserModel } from "./user.interface";
+// import { HTTP400Error } from "../../lib/utils/httpErrors";
 
 @injectable()
 export class UserModel implements IUserCustomModel {
 
   async fetchAll() {
+    // throw new HTTP400Error("nahi hai bhai");
+    
     return User.find({}, 'name email age');
   }
 

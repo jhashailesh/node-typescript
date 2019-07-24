@@ -1,35 +1,33 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const user_controller_1 = __importDefault(require("./user.controller"));
+const user_service_1 = require("./user.service");
 exports.default = [
     {
         path: "/",
         method: "get",
         escapeAuth: true,
-        handler: [user_controller_1.default.fetchAll]
+        handler: [user_service_1.userController.fetchAll]
     },
     {
         path: "/",
         method: "post",
-        handler: [user_controller_1.default.create]
+        escapeAuth: true,
+        handler: [user_service_1.userController.create]
     },
     {
         path: "/:id",
         method: "get",
-        handler: [user_controller_1.default.fetch]
+        handler: [user_service_1.userController.fetch]
     },
     {
         path: "/:id",
         method: "put",
-        handler: [user_controller_1.default.update]
+        handler: [user_service_1.userController.update]
     },
     {
         path: "/:id",
         method: "delete",
-        handler: [user_controller_1.default.fetchAll]
+        handler: [user_service_1.userController.fetchAll]
     }
 ];
 //# sourceMappingURL=index.js.map
