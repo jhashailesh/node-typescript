@@ -1,6 +1,7 @@
 import { userController } from "./user.service";
+import { IRoute } from "../../lib/utils";
 
-export default [
+  const route: IRoute[] =[
   {
     path: "/",
     method: "get",
@@ -27,5 +28,12 @@ export default [
     path: "/:id",
     method: "delete",
     handler: [userController.fetchAll]
+  },
+  {
+    path: "something",
+    method: "get",
+    handler: [userController.fetchAll]
   }
 ];
+
+export default route;

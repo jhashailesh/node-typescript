@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const user_service_1 = require("./user.service");
-exports.default = [
+const route = [
     {
         path: "/",
         method: "get",
@@ -28,6 +28,12 @@ exports.default = [
         path: "/:id",
         method: "delete",
         handler: [user_service_1.userController.fetchAll]
+    },
+    {
+        path: "something",
+        method: "get",
+        handler: [user_service_1.userController.fetchAll]
     }
 ];
+exports.default = route;
 //# sourceMappingURL=index.js.map

@@ -22,9 +22,10 @@ type Handler = (
 ) => Promise<void> | void;
 
 
+// type httpMethods = "get" | "put" | "post" | "patch" | "delete" | "head" | "option";
 
 export interface IRoute {
-  path: string;
+  path: string | string[];
   method: string;
   escapeAuth?: boolean;
   handler: Handler | Handler[];
