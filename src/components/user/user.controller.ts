@@ -8,7 +8,6 @@ class UserController {
 
     public fetchAll = async (req: Request, res: Response, next: NextFunction) => {
       try {
-
         responseHandler.
         reqRes(req, res).
         onFetch(msg.FETCH_ALL, await userModel.fetchAll(), msg.CREATED_DEC).

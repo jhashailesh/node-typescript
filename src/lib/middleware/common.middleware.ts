@@ -2,10 +2,16 @@ import { Router, json, urlencoded } from "express";
 import cors from "cors";
 import compression from "compression";
 import rateLimit from "express-rate-limit";
+import graphQlHttp from "express-graphql";
+import { buildSchema } from "graphql";
+
+
+
 
 /* Custom imports */
 import { configCors, rateLimitConfig } from "../../config";
 import { requestLogger } from "./requestLogger";
+import userModel from "../../components/user/user.model";
 
 
 export const allowCors = (router: Router) => {
@@ -55,3 +61,52 @@ export const requestLimiter = (router: Router) => {
   });
   router.use(limiter)
 };
+
+
+export const graphQl = (router: Router)=>{
+  router.use("/graphql", graphQlHttp({
+    schema: buildSchema(`
+
+      type User {
+        _id: ID!,
+        name: String!,
+        age: Int,
+        email: String,
+        createdAt: String
+      }
+
+      input userInput{
+        name: String!,
+        age: Int!,
+        email: String!
+      }
+    
+      type RootQuery{
+        users: [User!]!
+      }
+
+      type RootMutation{
+        createUser(user: userInput): User
+      }
+      
+      schema {
+        query: RootQuery
+        mutation: RootMutation
+      }
+    `),
+    rootValue: {
+
+      users: async () => {
+        return  userModel.fetchAll();
+      }
+       ,
+
+      createUser: async (args: any) => {
+        return  userModel.add(args.user);
+      }
+    },
+    graphiql: true
+
+  }))
+  return "";
+} 

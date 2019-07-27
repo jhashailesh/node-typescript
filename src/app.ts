@@ -16,7 +16,7 @@ import dbConnection from "./lib/helpers/dbConnection";
 // These error handlers will caught any unhandled exceptions or rejections
 // and do not stop the process with zero. 
 process.on("uncaughtException", e => {
-  console.log(e.message, "uncoutght");
+  console.log(e.message, "uncaught");
   process.exit(1);
 });
 

@@ -1,9 +1,9 @@
 import { User, IUserModel } from "./user.schema";
 
-export class UserModel {
+class UserModel {
 
   async fetchAll() {
-    return User.find({}).select({name:1}).cache();
+    return User.find({});
   }
 
   async fetch(id: string) {
