@@ -11,7 +11,7 @@ import { buildSchema } from "graphql";
 /* Custom imports */
 import { configCors, rateLimitConfig } from "../../config";
 import { requestLogger } from "./requestLogger";
-import userModel from "../../components/user/user.model";
+import { userModel } from './../../components/user/user.service';
 
 
 export const allowCors = (router: Router) => {

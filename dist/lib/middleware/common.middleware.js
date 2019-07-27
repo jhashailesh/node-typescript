@@ -11,7 +11,7 @@ const express_graphql_1 = __importDefault(require("express-graphql"));
 const graphql_1 = require("graphql");
 const config_1 = require("../../config");
 const requestLogger_1 = require("./requestLogger");
-const user_model_1 = __importDefault(require("../../components/user/user.model"));
+const user_service_1 = require("./../../components/user/user.service");
 exports.allowCors = (router) => {
     router.use(cors_1.default({
         origin(origin, callback) {
@@ -84,10 +84,10 @@ exports.graphQl = (router) => {
     `),
         rootValue: {
             users: async () => {
-                return user_model_1.default.fetchAll();
+                return user_service_1.userModel.fetchAll();
             },
             createUser: async (args) => {
-                return user_model_1.default.add(args.user);
+                return user_service_1.userModel.add(args.user);
             }
         },
         graphiql: true

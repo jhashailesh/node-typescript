@@ -1,4 +1,7 @@
-import mongoose from "mongoose";
+// FIXME: This has been commented out because there is no type assigned for cache in mongoDb
+// and we want to implement that on go. So We need to fix that.
+
+/* import mongoose from "mongoose";
 import { createClient } from 'redis';
 
 // import  { promisify } from 'util';
@@ -19,9 +22,9 @@ mongoose.Query.prototype.cache = function (options:ICacheOptions = {}) {
   return this;
 }
 
+
 mongoose.Query.prototype.exec = async function ()  {
   const args:any = arguments;
-
   if(!this.useCache){
     return exec.apply(this, args);
   }
@@ -61,3 +64,4 @@ const getHashValue = (hashKey: string, key: string): Promise<string> => {
 export const clearHash = (hashKey:string)=>{
   client.del(JSON.stringify(hashKey));
 }
+ */

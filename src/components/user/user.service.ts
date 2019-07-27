@@ -11,5 +11,6 @@ DIContainer.bind<IUserCustomModel>(UserModel).toSelf();
 // export default DIContainer;
 
 
-export const DIUserModel:IUserCustomModel = DIContainer.get<IUserCustomModel>(UserModel);
+export const userModel:IUserCustomModel = DIContainer.get<IUserCustomModel>(UserModel);
+
 export const userController: UserController = DIContainer.resolve<UserController>(UserController);
