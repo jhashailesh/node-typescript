@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon -x ts-node src/server.ts",
     "compile": "tsc-watch --onSuccess \"node ./dist/server.js\"",
-    "startPM2": "pm2 start pm2.yaml"
+    "startPM2": "pm2 start pm2.yml"
   },
   "repository": {
     "type": "git",

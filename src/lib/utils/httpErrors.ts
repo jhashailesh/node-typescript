@@ -25,6 +25,15 @@ export class HTTP400Error extends HTTPClientError {
   }
 }
 
+export class HTTP200Error extends HTTPClientError {
+  readonly statusCode = 200;
+
+  constructor(message: string | object = "Result not found", description?: string) {
+    super(message,description);
+  }
+}
+
+
 // tslint:disable-next-line: max-classes-per-file
 export class HTTP401Error extends HTTPClientError {
   readonly statusCode = 401;
@@ -48,6 +57,14 @@ export class HTTP404Error extends HTTPClientError {
   readonly statusCode = 404;
 
   constructor(message: string | object = "Not found", description?: string) {
+    super(message, description);
+  }
+}
+// tslint:disable-next-line: max-classes-per-file
+export class HTTP409Error extends HTTPClientError {
+  readonly statusCode = 409;
+
+  constructor(message: string | object = "Conflict", description?: string) {
     super(message, description);
   }
 }

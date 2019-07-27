@@ -2,29 +2,29 @@ import { userController } from "./user.service";
 
 export default [
   {
-    path: "/",
+    path: "user/",
     method: "get",
     escapeAuth:true,
     handler: [userController.fetchAll]
   },
   {
-    path: "/",
+    path: "user/",
     method: "post",
     escapeAuth: true,
     handler: [userController.create]
   },
   {
-    path: "/:id",
+    path: "user/:id",
     method: "get",
     handler: [userController.fetch]
   },
   {
-    path: "/:id",
+    path: "user/:id",
     method: "put",
     handler: [userController.update]
   },
   {
-    path: "/:id",
+    path: "user/:id",
     method: "delete",
     handler: [userController.fetchAll]
   }

@@ -10,7 +10,7 @@ const user_schema_1 = require("./user.schema");
 const inversify_1 = require("inversify");
 let UserModel = class UserModel {
     async fetchAll() {
-        return user_schema_1.User.find({}, 'name email age');
+        return user_schema_1.User.find({}, 'name email age createdAt');
     }
     async fetch(id) {
         return user_schema_1.User.findById(id, 'name email age');

@@ -9,7 +9,7 @@ export class UserModel implements IUserCustomModel {
   async fetchAll() {
     // throw new HTTP400Error("nahi hai bhai");
     
-    return User.find({}, 'name email age');
+    return User.find({}, 'name email age createdAt');
   }
 
   async fetch(id: string) {
