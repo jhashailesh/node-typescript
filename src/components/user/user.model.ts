@@ -1,9 +1,15 @@
-import { User, IUserModel } from "./user.schema";
+import { User} from "./user.schema";
+import { injectable } from "inversify";
+import { IUserCustomModel, IUserModel } from "./user.interface";
+// import { HTTP400Error } from "../../lib/utils/httpErrors";
 
-class UserModel {
+@injectable()
+export class UserModel implements IUserCustomModel {
 
   async fetchAll() {
-    return User.find({});
+    // throw new HTTP400Error("nahi hai bhai");
+    
+    return User.find({}, 'name email age');
   }
 
   async fetch(id: string) {
@@ -25,4 +31,5 @@ class UserModel {
   }
 }
 
-export default new UserModel;
+
+// export default new UserModel;

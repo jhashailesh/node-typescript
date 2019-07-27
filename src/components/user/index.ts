@@ -1,5 +1,4 @@
-import userController from "./user.controller";
-
+import { userController } from "./user.service";
 
 export default [
   {
@@ -11,6 +10,7 @@ export default [
   {
     path: "/",
     method: "post",
+    escapeAuth: true,
     handler: [userController.create]
   },
   {

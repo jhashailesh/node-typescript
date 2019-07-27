@@ -1,15 +1,14 @@
-import { NextFunction, Response, Request, Router } from "express";
-import { IRoute } from "../utils";
+import { NextFunction, Response, Request} from "express";
+import { HTTP401Error } from "../utils/httpErrors";
 
+export const  Authorization = (req:Request, res: Response, next: NextFunction)=>{
 
-export const  Authorization = (route: IRoute, router: Router) =>{
-  router.use((req:Request, res: Response, next: NextFunction)=>{
-    if(req.header("Authorization")){
-      console.log(req.header(`Authorization`));
-      next();
-    }else{
-      console.log(route);
-      next(new Error("not authorised"));     
-    }
-  });
+  if(req.header("Authorization")){
+
+    // Put you authentication logic here ...
+    console.log(req.header(`Authorization`));
+    next();
+  }else{
+    next(new HTTP401Error("You are not authorized"));
+  }
 }

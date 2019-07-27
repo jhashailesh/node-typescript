@@ -1,5 +1,6 @@
 import { Router, Request, Response, NextFunction } from "express";
 import { Authorization } from "../middleware/auth.middleware";
+
 type Wrapper = ((router: Router) => void);
 
 // load all middleware with this function call
@@ -31,13 +32,19 @@ export interface IRoute {
 
 // loading all routes and initialize to use them. 
 export const applyRoutes = (routes: IRoute[], router: Router) => {
-  for (const route of routes) {
-    const { method, path, escapeAuth, handler} = route;
-
-    if(!escapeAuth){
-      Authorization(route, router);
+    for (const route of routes) {
+      const { method, path, escapeAuth} = route;
+      let handler = route.handler;
+      
+      if(!Array.isArray(handler)){
+        handler = [handler];
+      }
+    
+      if(!escapeAuth){
+        (router as any)[method](path, [Authorization, ...handler]);
+      }
+      (router as any)[method](path, handler);
+      
     }
-    (router as any)[method](path, handler);
-  }
-  return router;
+    return router;
 };

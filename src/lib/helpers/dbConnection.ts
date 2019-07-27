@@ -2,12 +2,12 @@ import { connect, connection } from "mongoose";
 import * as chalk from "chalk";
 import { mongoUrl } from "../../config";
 
-//require database URL from properties file
+// require database URL from properties file
 
-var connected = chalk.default.bold.cyan;
-var error = chalk.default.bold.yellow;
-var disconnected = chalk.default.bold.red;
-var termination = chalk.default.bold.magenta;
+const connected = chalk.default.bold.cyan;
+const error = chalk.default.bold.yellow;
+const disconnected = chalk.default.bold.red;
+const termination = chalk.default.bold.magenta;
 
 
 class Connection {
@@ -19,6 +19,7 @@ class Connection {
 
     public mongoConnection(){
         const dbURL:any = this.mongoUrl;
+        // FIXME: Fix this connection issue....
         connect(dbURL, this.mongoOption());
 
         connection.on('connected', ()=>{
@@ -41,7 +42,7 @@ class Connection {
         });
     }
 
-    protected mongoOption() {
+    protected mongoOption(): any {
         return{
 
           // absolutely copied from mongoose docs. 

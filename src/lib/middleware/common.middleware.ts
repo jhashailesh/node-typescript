@@ -48,7 +48,7 @@ export const handleCompression = (router: Router) => {
 };
 
 export const requestLimiter = (router: Router) => {
-  const limiter = new rateLimit({
+  const limiter =  new rateLimit({
     windowMs: +rateLimitConfig.inTime || 1*60*1000, // 1 minutes 
     max: +rateLimitConfig.maxRequest || 12, // limit each IP to 12 requests per windowMs,
     message:{

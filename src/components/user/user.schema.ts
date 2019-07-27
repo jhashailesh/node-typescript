@@ -1,14 +1,10 @@
-import { Document, Schema, Model, model} from "mongoose";
-import { IUser } from "./user.interface";
+import {Schema, Model, model} from "mongoose";
+import { IUserModel } from "./user.interface";
 
 // This will provide hints in intellisense when you create 
 // new instance of particular mode . 
 // It can help to increase the productivity.
-export interface IUserModel extends IUser, Document {
-  fullName(): string;
-  addNewUser():IUserModel;
-  isEmailExist(): Promise<boolean>;
-}
+
 
 export const UserSchema: Schema = new Schema({
   email: String,

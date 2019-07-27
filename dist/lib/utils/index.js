@@ -8,9 +8,13 @@ exports.applyMiddleware = (middlewareWrappers, router) => {
 };
 exports.applyRoutes = (routes, router) => {
     for (const route of routes) {
-        const { method, path, escapeAuth, handler } = route;
+        const { method, path, escapeAuth } = route;
+        let handler = route.handler;
+        if (!Array.isArray(handler)) {
+            handler = [handler];
+        }
         if (!escapeAuth) {
-            auth_middleware_1.Authorization(route, router);
+            router[method](path, [auth_middleware_1.Authorization, ...handler]);
         }
         router[method](path, handler);
     }
