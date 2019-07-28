@@ -1,7 +1,15 @@
-// FIXME: This has been commented out because there is no type assigned for cache in mongoDb
-// and we want to implement that on go. So We need to fix that.
 
-/* import mongoose from "mongoose";
+declare module 'mongoose' {
+  interface Query<T> extends DocumentQuery<T, any> { 
+    useCache: boolean,
+    hashKey: any;
+    mongooseCollection: {name: string}
+    cache():any,   
+
+  }
+}
+
+import mongoose from "mongoose";
 import { createClient } from 'redis';
 
 // import  { promisify } from 'util';
@@ -15,6 +23,8 @@ const client = createClient(redisUrl);
 
 
 const exec = mongoose.Query.prototype.exec;
+
+
 
 mongoose.Query.prototype.cache = function (options:ICacheOptions = {}) {
   this.useCache = true;
@@ -64,4 +74,4 @@ const getHashValue = (hashKey: string, key: string): Promise<string> => {
 export const clearHash = (hashKey:string)=>{
   client.del(JSON.stringify(hashKey));
 }
- */
+

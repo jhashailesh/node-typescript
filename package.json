@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon -x ts-node src/server.ts",
     "compile": "tsc-watch --onSuccess \"node ./dist/server.js\"",
-    "startPM2": "pm2 start pm2.yml"
+    "startPM2": "pm2 start pm2.yml",
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "graphql": "^14.4.2",
     "inversify": "^5.0.1",
     "mongoose": "^5.6.7",
+    "nodemailer": "^6.3.0",
     "redis": "^2.8.0",
     "reflect-metadata": "^0.1.13"
   },
@@ -49,10 +51,14 @@
     "@types/express-graphql": "^0.8.0",
     "@types/express-rate-limit": "^3.3.1",
     "@types/graphql": "^14.2.3",
+    "@types/jest": "^24.0.15",
     "@types/mongodb": "^3.1.30",
     "@types/mongoose": "^5.5.11",
     "@types/node": "^11.13.18",
+    "@types/nodemailer": "^6.2.1",
     "@types/redis": "^2.8.13",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
     "tsc-watch": "^2.2.1",
     "tslint": "^5.18.0",

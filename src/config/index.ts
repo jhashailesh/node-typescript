@@ -15,6 +15,8 @@ export const mongoUrl = (): string=> {
 }
 
 
+
+
 export const configCors = {
   // Allow your domains to restrict ill apis.
   allowOrigin : [
@@ -25,7 +27,37 @@ export const configCors = {
   exposedHeaders: ["X-Token"]
 }
 
+/*------------------------------------------------
+| Rate limiting configuration
+--------------------------------------------------
+| Put limit on number of request per ip at
+| some amount of time. It can prevent you from
+| some bad (scripted) API hits.
+| ------------------------------------------------
+| NPM :: express-rate-limit
+| https://www.npmjs.com/package/express-rate-limit
+|
+*/
 export const rateLimitConfig = {
   inTime : process.env.REQUEST_TIME || 1*60*1000,
   maxRequest: process.env.MAX_REQUEST|| 12
 }
+
+/*------------------------------------------------
+| Email Configuration
+--------------------------------------------------
+| NPM :: nodemailer
+| https://nodemailer.com
+|
+*/
+export const emailConfig = {
+  host: "smtp.ethereal.email",
+  port: 587,
+  secure: false, 
+  user: "some@email.com", // generated ethereal user
+  pass: "pass",
+  from: "👻",
+  productionMode: false
+}
+
+
