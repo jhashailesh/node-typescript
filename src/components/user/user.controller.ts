@@ -3,12 +3,8 @@ import { Request, Response, NextFunction } from "express";
 import { user as msg } from "../../lib/helpers/customMessage";
 import responseHandler from "../../lib/helpers/responseHandler";
 import { inject, injectable } from "inversify";
-// import { DIUserModel } from "./user.service";
 import { UserModel } from "./user.model";
 import {IUserCustomModel} from './user.interface';
-
-
-// const userModel: any = {};
 
 
 @injectable()
